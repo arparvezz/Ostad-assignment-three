@@ -5,10 +5,14 @@ let title = ref('')
 let body = ref('')
 function createNewBlog(){
     let contentObj = {
-        title:title.vaue,
+        title:title.value,
         body:body.value
     }
     blogs.push(contentObj)
+
+    // clear the form
+    title.value = ''
+    body.value = ''
 }
 </script>
 

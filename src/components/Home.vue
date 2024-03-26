@@ -4,7 +4,12 @@ import blogs from '../Data/BlogData';
 
 // limited caracter to 150 words
 function truncateWords(str,count){
+  if(str.split('').length > 150){
     return `${str.split('').slice(0,count).join('')}...`
+  }else{
+    return `${str}`
+  }
+    
 }
 
 </script>

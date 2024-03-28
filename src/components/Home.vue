@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
 import blogs from '../Data/BlogData';
+import activePost from '../Data/ActivePost';
 
 // limited caracter to 150 words
 function truncateWords(str,count){
@@ -11,7 +12,7 @@ function truncateWords(str,count){
   }
     
 }
-
+console.log(activePost.activePostIndex)
 </script>
 
 <template>
@@ -22,7 +23,8 @@ function truncateWords(str,count){
         <div class="p-3 bg-slate-50 rounded" v-for="(singleBlog, index) in blogs" :key="index">
             <h2 class="text-xl">{{ singleBlog.title }}</h2>
             <p class="text-slate-400" v-text="truncateWords(singleBlog.body,150)"></p>
-            <button class="my-2 px-3 py-1 rounded-md bg-slate-800 text-white">See More</button>
+            <router-link class="px-3 py-1 rounded bg-slate-300 hover:bg-slate-400" to="/single-blog" @click="activePost.activePostIndex = index">See More ...</router-link>
+            
         </div>
     </div>
   </div>

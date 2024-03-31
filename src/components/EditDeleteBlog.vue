@@ -43,7 +43,7 @@ function editPost(ind){
             <label for="body">Write Body</label><br>
             <textarea name="body" id="body" cols="30" rows="6" class="p-2 border border-slate-100 outline-none w-full"  v-model="blogs[currentPostIndex].body"></textarea>
         </div>
-        <button @click="showForm = false" class="px-3 py-1 rounded-md bg-green-800 text-white">Add New Post</button>
+        <button @click="showForm = false" class="px-3 py-1 rounded-md bg-green-800 text-white">Update</button>
     </form>
   </div>
 </template>
